@@ -1,0 +1,116 @@
+{
+  "React Component with TypeScript": {
+    "prefix": "rctsx",
+    "body": [
+      "import { useState } from 'react';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "  $2",
+      "}",
+      "",
+      "const ${1:ComponentName} = ({ $3 }: ${1:ComponentName}Props) => {",
+      "  $4",
+      "",
+      "  return (",
+      "    <div className=\"$5\">",
+      "      $6",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "Create a React component with TypeScript and props interface"
+  },
+
+  "LIFF Component": {
+    "prefix": "liffcomp",
+    "body": [
+      "import { useLiff } from '@/contexts/LiffContext';",
+      "import { useToast } from '@/hooks/use-toast';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "  $2",
+      "}",
+      "",
+      "const ${1:ComponentName} = ({ $3 }: ${1:ComponentName}Props) => {",
+      "  const { isLoggedIn, profile, liff } = useLiff();",
+      "  const { toast } = useToast();",
+      "",
+      "  if (!isLoggedIn) {",
+      "    return <div className=\"text-center p-4\">로그인이 필요합니다.</div>;",
+      "  }",
+      "",
+      "  return (",
+      "    <div className=\"$4\">",
+      "      <h2>안녕하세요, {profile?.displayName}님!</h2>",
+      "      $5",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "Create a LIFF-enabled React component"
+  },
+
+  "PlanetKit Hook": {
+    "prefix": "pkithook",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "import { useVideoSDK } from '@/contexts/VideoSDKContext';",
+      "import { useToast } from '@/hooks/use-toast';",
+      "",
+      "export const use${1:HookName} = () => {",
+      "  const { planetKitConfig } = useVideoSDK();",
+      "  const { toast } = useToast();",
+      "  const [${2:state}, set${2/(.*)/${1:/capitalize}/}] = useState($3);",
+      "",
+      "  useEffect(() => {",
+      "    $4",
+      "  }, [planetKitConfig]);",
+      "",
+      "  return {",
+      "    ${2:state},",
+      "    set${2/(.*)/${1:/capitalize}/}",
+      "  };",
+      "};"
+    ],
+    "description": "Create a custom hook for PlanetKit functionality"
+  },
+
+  "API Function": {
+    "prefix": "apifunc",
+    "body": [
+      "interface ${1:FunctionName}Request {",
+      "  $2",
+      "}",
+      "",
+      "interface ${1:FunctionName}Response {",
+      "  $3",
+      "}",
+      "",
+      "export const ${4:functionName} = async (data: ${1:FunctionName}Request): Promise<${1:FunctionName}Response> => {",
+      "  try {",
+      "    const response = await fetch('/api/${5:endpoint}', {",
+      "      method: 'POST',",
+      "      headers: {",
+      "        'Content-Type': 'application/json',",
+      "      },",
+      "      body: JSON.stringify(data),",
+      "    });",
+      "",
+      "    if (!response.ok) {",
+      "      throw new Error(`HTTP error! status: \\${response.status}`);",
+      "    }",
+      "",
+      "    return await response.json();",
+      "  } catch (error) {",
+      "    console.error('${4:functionName} error:', error);",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "Create a typed API function"
+  }
+}

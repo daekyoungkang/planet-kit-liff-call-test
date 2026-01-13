@@ -1,0 +1,45 @@
+{
+  "recommendations": [
+    // React & TypeScript 필수
+    "ms-vscode.vscode-typescript-next",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // React 개발 도구
+    "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-json",
+
+    // TypeScript 지원
+    "pmneo.tsimporter",
+    "ms-vscode.vscode-typescript-next",
+
+    // Git 도구
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+
+    // 유용한 도구들
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-close-tag",
+    "ms-vscode.vscode-mdx",
+
+    // LINE LIFF 개발 도구
+    "ms-vscode.live-server",
+    "humao.rest-client",
+
+    // 테마 & UI
+    "pkief.material-icon-theme",
+    "github.github-vscode-theme",
+
+    // 추가 유틸리티
+    "streetsidesoftware.code-spell-checker",
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml"
+  ],
+  "unwantedRecommendations": [
+    // 충돌 가능성이 있는 확장들 제외
+    "ms-vscode.vscode-typescript",
+    "hookyqr.beautify"
+  ]
+}
